@@ -171,6 +171,8 @@ D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\bin\Debug\netcoreapp3.1\Sw
 D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
 D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
+D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Redis.dll
+D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\bin\Debug\netcoreapp3.1\StackExchange.Redis.StrongName.dll
 D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\obj\Debug\netcoreapp3.1\projectSwd391.csproj.CoreCompileInputs.cache
 D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\obj\Debug\netcoreapp3.1\projectSwd391.MvcApplicationPartsAssemblyInfo.cs
 D:\SM7\Project\dotnetCore\projectSwd391\projectSwd391\obj\Debug\netcoreapp3.1\projectSwd391.MvcApplicationPartsAssemblyInfo.cache

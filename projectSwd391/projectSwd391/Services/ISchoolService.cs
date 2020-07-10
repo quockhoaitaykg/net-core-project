@@ -8,7 +8,7 @@ namespace projectSwd391.Services
 {
     interface ISchoolService
     {
-        List<School> GetSchool(int page, int perPage, string sort, string search);
+        List<School> GetSchool();
 
         bool InsertSchool(string name, string phone, string address, string latitude, string longitude, int districtId, int insId, int updId);
 

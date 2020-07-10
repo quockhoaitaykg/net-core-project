@@ -1,4 +1,7 @@
-﻿using projectSwd391.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
+using projectSwd391.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,42 +19,20 @@ namespace projectSwd391.Services
         public SchoolServiceImp()
         {
             this.db = new devContext();
+           
         }
+
+        
 
         public School FindSchoolById(int id)
         {
-            return db.School.FirstOrDefault(x => x.Id == id);
+            
+            return db.School.FirstOrDefault(x => x.Id ==id);
         }
 
-        public List<School> GetSchool(int page, int perPage, string sort, string search)
+        public List<School> GetSchool()
         {
-            var query = db.School.AsQueryable();
-            string orderBy = "Id";
-
-            if (search != null)
-            {
-                query = query.Where(x => x.Name.Contains(search));
-            }
-
-            if (sort != null)
-            {
-                string[] tmp = sort.Split(',');
-                string result = "";
-                foreach (string word in tmp)
-                {
-                    if (word[0] == '-')
-                    {
-                        result += word.Substring(1, word.Length - 1) + " DESC,";
-                    }
-                    else
-                    {
-                        result += word + " ASC,";
-                    }
-                }
-                orderBy = result.Substring(0, result.Length - 1);
-            }
-
-            return query.OrderBy(x =>orderBy).Skip(page * perPage).Take(perPage).ToList();
+            return db.School.ToList();
         }
 
         public bool InsertSchool(string name, string phone, string address, string latitude, string longitude, int districtId, int insId, int updId)
@@ -148,8 +129,9 @@ namespace projectSwd391.Services
                 schoolBranch.UpdDateTime = DateTime.Now;
                 location.Ver = location.Ver + 1;
                 location.UpdDateTime = DateTime.Now;
-                db.SchoolBranch.Update(schoolBranch);
                 db.Location.Update(location);
+                db.SchoolBranch.Update(schoolBranch);
+                
                 db.SaveChanges();
                 return true;
             }

@@ -31,6 +31,12 @@ namespace projectSwd391
             
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddDistributedRedisCache(options => 
+            {
+                options.Configuration = "localhost:6379";
+                options.InstanceName = "redis1";
+            
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
